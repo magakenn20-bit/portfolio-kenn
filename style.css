@@ -191,38 +191,44 @@ nav a:hover {
   margin-bottom: 2rem;
 }
 
+/* Buttons & Links (Matched to Design) */
 .quick-links {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
-/* Buttons & Links */
 .btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background-color: var(--accent);
-  color: var(--bg-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  background-color: #38bdf8;
+  color: #0f172a;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.2s;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid #38bdf8;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
-  background-color: var(--accent-hover);
+  background-color: #0284c7;
+  border-color: #0284c7;
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--text-main);
-  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #334155;
 }
 
 .btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: transparent;
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.05);
 }
 
 /* Grids & Cards */
