@@ -62,14 +62,14 @@ header.scrolled {
 .nav-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0.8rem 2rem; /* Thinner navbar */
+  padding: 0.8rem 2rem; 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.3rem; /* Scaled down logo */
+  font-size: 1.3rem; 
   font-weight: 900;
   color: var(--text-stone);
   text-decoration: none;
@@ -78,7 +78,7 @@ header.scrolled {
 
 .logo:hover { 
   color: var(--accent-rose-hover); 
-  transform: scale(1.05); /* Pop effect */
+  transform: scale(1.05);
 }
 
 .nav-links a {
