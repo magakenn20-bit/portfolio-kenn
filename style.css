@@ -19,7 +19,7 @@
 
 html, body {
   height: 100%;
-  overflow: hidden; /* Pinipigilan ang buong page na mag-scroll */
+  overflow: hidden; /* Walang scroll sa buong page */
 }
 
 body {
@@ -38,6 +38,7 @@ header {
   background: linear-gradient(90deg, #fed7aa, #fecdd3);
   border-bottom: 2px solid var(--border-color);
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  flex-shrink: 0; /* Para hindi umikli ang navbar */
 }
 
 .nav-container {
@@ -84,17 +85,27 @@ header {
 /* --- TAB SYSTEM CSS --- */
 .page-section {
   display: none;
-  height: calc(100vh - 130px); /* Sakto lang para hindi matakpan ng header at footer */
+  flex-grow: 1; 
   width: 100%;
-  overflow-y: auto; /* Kung sakaling masyadong mahaba ang content, dito lang mag-scroll */
+  overflow-y: auto; /* Dito lang nangyayari ang scroll kung mahaba ang content */
+  
+  /* Space sa taas at baba para hindi matakpan ng navbar at footer */
+  padding-top: 3rem; 
+  padding-bottom: 4rem; 
   animation: fadeIn 0.3s ease-in-out;
 }
 
 .page-section.active {
+  display: block; 
+}
+
+/* Ang Home page lang ang naka-center vertically */
+#page-home.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 0; 
 }
 
 @keyframes fadeIn {
@@ -107,12 +118,12 @@ header {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
 .text-center { text-align: center; }
 
-/* --- Hero Section --- */
+/* --- Hero Section (Home) --- */
 .hero {
   display: flex;
   align-items: center;
@@ -249,12 +260,14 @@ header {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column; /* Para pantay ang haba ng cards */
 }
 
 .project-card:hover { transform: translateY(-5px); }
 
 .project-image {
-  height: 200px; 
+  height: 220px; 
   background-color: #e7e5e4;
   border-bottom: 2px solid var(--border-color);
   overflow: hidden;
@@ -269,7 +282,12 @@ header {
 
 .project-card:hover .project-image img { transform: scale(1.05); }
 
-.project-info { padding: 1.5rem; }
+.project-info { 
+  padding: 1.5rem; 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
 .project-info h3 {
   font-size: 1.4rem;
@@ -282,6 +300,7 @@ header {
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  flex-grow: 1; 
 }
 
 .tags {
@@ -321,14 +340,15 @@ header {
 
 .social-links a:hover {
   color: var(--accent-rose-hover);
-  transform: translateY(-5px); /* Tumatalon pag na-hover */
+  transform: translateY(-5px); 
 }
 
 /* --- Footer --- */
 footer {
   background-color: #1c1917;
   color: #fff;
-  margin-top: auto; 
+  flex-shrink: 0; 
+  padding: 1rem 0;
 }
 
 footer p { color: #a8a29e; font-size: 0.9rem; text-align: center; }
@@ -354,5 +374,10 @@ footer p { color: #a8a29e; font-size: 0.9rem; text-align: center; }
   .btn-brutal {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .page-section {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
   }
 }
