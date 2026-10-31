@@ -19,7 +19,7 @@
 
 html, body {
   height: 100%;
-  overflow: hidden; /* PINIPIGILAN ANG SCROLL */
+  overflow: hidden; /* Pinipigilan ang buong page na mag-scroll */
 }
 
 body {
@@ -45,13 +45,13 @@ header {
   margin: 0 auto;
   padding: 1rem 2rem; 
   display: flex;
-  justify-content: center; /* Center ang buttons */
+  justify-content: center; 
   align-items: center;
 }
 
 .nav-links {
   display: flex;
-  gap: 1rem; /* Space between buttons */
+  gap: 1rem; 
 }
 
 /* --- Buttons --- */
@@ -84,9 +84,9 @@ header {
 /* --- TAB SYSTEM CSS --- */
 .page-section {
   display: none;
-  height: calc(100vh - 70px); /* Sakto lang sa screen */
+  height: calc(100vh - 130px); /* Sakto lang para hindi matakpan ng header at footer */
   width: 100%;
-  overflow-y: auto; /* Kung sakaling masyadong mahaba ang laman, dito lang mag-scroll */
+  overflow-y: auto; /* Kung sakaling masyadong mahaba ang content, dito lang mag-scroll */
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -306,13 +306,32 @@ header {
   margin-top: 2rem;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links a {
+  font-size: 3rem;
+  color: var(--text-stone);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: var(--accent-rose-hover);
+  transform: translateY(-5px); /* Tumatalon pag na-hover */
+}
+
 /* --- Footer --- */
 footer {
   background-color: #1c1917;
   color: #fff;
+  margin-top: auto; 
 }
 
-footer p { color: #a8a29e; font-size: 0.9rem; }
+footer p { color: #a8a29e; font-size: 0.9rem; text-align: center; }
 
 /* --- Responsive Design --- */
 @media (max-width: 900px) {

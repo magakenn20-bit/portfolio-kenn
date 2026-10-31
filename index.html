@@ -16,10 +16,10 @@
   <!-- Navbar -->
   <header id="navbar" class="scrolled">
     <div class="nav-container">
-      <!-- Tinanggal ang <Kenn/> logo dito -->
+      <!-- Tinanggal ang <Kenn/> logo -->
       
       <nav class="nav-links">
-        <!-- Ginawa nating buttons lahat ng links kagaya ng Contact Me -->
+        <!-- Ginawang buttons lahat ng links -->
         <a href="#" class="btn-brutal nav-btn active" onclick="showPage('home', this)">Home</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('skills', this)">Skills</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('projects', this)">Projects</a>
@@ -127,18 +127,35 @@
           <p>I am currently seeking internship opportunities and academic collaborations. Feel free to reach out if you have any questions or just want to say hi!</p>
         </div>
         
-        <div class="contact-btn-wrapper">
+        <div class="contact-btn-wrapper" style="margin-bottom: 2rem;">
           <a href="mailto:kenn.maga@example.com" class="btn-brutal btn-large">
             <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i> Email Me
           </a>
+        </div>
+
+        <!-- SOCIAL LINKS MO -->
+        <div class="social-links-wrapper">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem; color: var(--text-stone);">Connect with me</h3>
+          <div class="social-links">
+            <!-- Palitan mo yung href ng totoong link mo -->
+            <a href="https://github.com/magakenn20-bit" target="_blank" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" title="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer (Optional: pwede tanggalin kung ayaw mo ng footer sa baba) -->
-  <footer style="margin-top: 0; position: fixed; bottom: 0; width: 100%; padding: 1rem 0;">
+  <!-- Footer (Fixed sa baba) -->
+  <footer style="margin-top: 0; position: fixed; bottom: 0; width: 100%; padding: 1rem 0; z-index: 1000;">
     <div class="footer-bottom" style="border-top: none; padding-top: 0;">
       <p>&copy; <span id="year"></span> Kenn Bagaporo Maga. All rights reserved.</p>
     </div>
@@ -185,17 +202,17 @@
 
     // TAB SYSTEM LOGIC
     function showPage(pageId, clickedElement = null) {
-      // Itago lahat ng pages
+      // Hide all pages
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => sec.classList.remove('active'));
-
-      // Ipakita yung pinindot na page
+      
+      // Show target page
       document.getElementById('page-' + pageId).classList.add('active');
-
-      // Scroll to top para hindi lumabas sa gitna
+      
+      // Scroll to top in case of overflow
       window.scrollTo(0, 0);
-
-      // Highlight yung active na button sa Navbar
+      
+      // Highlight active nav button
       if (clickedElement) {
         document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
         clickedElement.classList.add('active');
