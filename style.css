@@ -225,9 +225,9 @@ header {
 .card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
 .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* --- Experience & Education Section (INAYOS PARA TUMAAS ANG STYLE) --- */
+/* --- Experience & Education Section --- */
 .exp-title-wrapper {
-  border-bottom: 2px solid var(--border-color); /* Makapal na border sa baba ng title */
+  border-bottom: 2px solid var(--border-color);
   padding-bottom: 1rem;
   margin-bottom: 3rem;
 }
@@ -235,7 +235,7 @@ header {
 .exp-title-wrapper h2 {
   font-size: 2.5rem;
   font-weight: 900;
-  color: var(--text-stone); /* Itim na text */
+  color: var(--text-stone);
 }
 
 .exp-edu-grid {
@@ -254,9 +254,9 @@ header {
 }
 
 .exp-card {
-  background-color: var(--bg-white); /* Puti na background */
-  border: 2px solid var(--border-color); /* Makapal na border */
-  box-shadow: 6px 6px 0px var(--shadow-color); /* Hard shadow */
+  background-color: var(--bg-white);
+  border: 2px solid var(--border-color);
+  box-shadow: 6px 6px 0px var(--shadow-color);
   border-radius: 12px;
   padding: 2rem;
   display: flex;
@@ -264,9 +264,7 @@ header {
   transition: transform 0.2s ease;
 }
 
-.exp-card:hover {
-  transform: translateY(-5px);
-}
+.exp-card:hover { transform: translateY(-5px); }
 
 .exp-date {
   font-size: 0.85rem;
@@ -327,6 +325,14 @@ header {
 .text-red { color: #ef4444; }
 
 /* --- Projects Section --- */
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr; /* Isang column lang */
+  gap: 2.5rem;
+  max-width: 700px; /* Nilakihan nang konti para magmukhang premium */
+  margin: 0 auto;
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -349,7 +355,7 @@ header {
 .project-card:hover { transform: translateY(-5px); }
 
 .project-image {
-  height: 220px; 
+  height: 250px; 
   background-color: #e7e5e4;
   border-bottom: 2px solid var(--border-color);
   overflow: hidden;
@@ -365,14 +371,14 @@ header {
 .project-card:hover .project-image img { transform: scale(1.05); }
 
 .project-info { 
-  padding: 1.5rem; 
+  padding: 2rem; 
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.project-info h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; }
-.project-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; flex-grow: 1; }
+.project-info h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem; }
+.project-info p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6; flex-grow: 1; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .tag {
