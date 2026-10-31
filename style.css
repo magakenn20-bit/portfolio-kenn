@@ -62,20 +62,24 @@ header.scrolled {
 .nav-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem; /* Thinner navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Scaled down logo */
   font-weight: 900;
   color: var(--text-stone);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s, transform 0.2s;
 }
-.logo:hover { color: var(--accent-rose-hover); }
+
+.logo:hover { 
+  color: var(--accent-rose-hover); 
+  transform: scale(1.05); /* Pop effect */
+}
 
 .nav-links a {
   margin: 0 1.5rem;
@@ -168,11 +172,10 @@ header.scrolled {
   justify-content: center;
 }
 
-/* UPDATED: Styles for your actual profile picture */
 .hero-profile-img {
   width: 320px;
   height: 380px;
-  object-fit: cover; /* This prevents the image from stretching */
+  object-fit: cover; 
   border: 2px solid var(--border-color);
   border-radius: 12px;
   box-shadow: 6px 6px 0px var(--shadow-color);
@@ -286,9 +289,8 @@ section { padding: 5rem 0; }
   transform: translateY(-5px);
 }
 
-/* UPDATED: Styles for project images */
 .project-image {
-  height: 250px; /* Increased slightly for better view */
+  height: 250px; 
   background-color: #e7e5e4;
   border-bottom: 2px solid var(--border-color);
   overflow: hidden;
@@ -302,7 +304,7 @@ section { padding: 5rem 0; }
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05); /* Zoom effect on hover */
+  transform: scale(1.05); 
 }
 
 .project-info {
