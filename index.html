@@ -18,6 +18,8 @@
     <div class="nav-container">
       <nav class="nav-links">
         <a href="#" class="btn-brutal nav-btn active" onclick="showPage('home', this)">Home</a>
+        <!-- BAGONG ABOUT BUTTON -->
+        <a href="#" class="btn-brutal nav-btn" onclick="showPage('about', this)">About</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('skills', this)">Skills</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('projects', this)">Projects</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('contact', this)">Contact Me</a>
@@ -28,9 +30,8 @@
   <!-- MAIN CONTAINER -->
   <main id="app-container">
 
-    <!-- PAGE 1: HOME (Hero + About) -->
+    <!-- PAGE 1: HOME (Hero ONLY - No Scroll) -->
     <section id="page-home" class="page-section active">
-      <!-- Hero Section -->
       <div class="hero">
         <div class="hero-content">
           <h1 class="hero-title">Hi, I’m Kenn Bagaporo Maga</h1>
@@ -40,7 +41,8 @@
           <p class="hero-quote">"Turning curiosity into code."</p>
           
           <div class="hero-buttons">
-            <a href="#" class="btn-brutal" onclick="showPage('projects', document.querySelectorAll('.nav-btn')[2])">View My Work</a>
+            <!-- Index 3 na ngayon ang Projects dahil may About na -->
+            <a href="#" class="btn-brutal" onclick="showPage('projects', document.querySelectorAll('.nav-btn')[3])">View My Work</a>
           </div>
         </div>
         
@@ -48,39 +50,39 @@
           <img src="profile.jpg" alt="Kenn Bagaporo Maga" class="hero-profile-img">
         </div>
       </div>
-
-      <!-- About Section (Ibinalik para hindi empty ang Home) -->
-      <section class="about bg-white">
-        <div class="container">
-          <div class="section-header">
-            <h2>About Me</h2>
-            <p>I am a 3rd-year BSIT student at Eastern Samar State University. I'm passionate about creating clean, responsive, and visually appealing websites. I enjoy turning ideas into functional experiences using modern web technologies.</p>
-          </div>
-
-          <div class="grid-3">
-            <div class="card">
-              <i class="fa-solid fa-laptop-code card-icon"></i>
-              <h3>Clean Code</h3>
-              <p>Writing well-structured, semantic HTML and core programming logic.</p>
-            </div>
-            <div class="card">
-              <i class="fa-solid fa-code card-icon"></i>
-              <h3>Modern Styling</h3>
-              <p>Crafting visually appealing interfaces and responsive design.</p>
-            </div>
-            <div class="card">
-              <i class="fa-solid fa-database card-icon"></i>
-              <h3>Data Management</h3>
-              <p>Building and managing efficient databases using SQL and PHP.</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </section>
 
-    <!-- PAGE 2: SKILLS -->
+    <!-- PAGE 2: ABOUT (Inilipat dito) -->
+    <section id="page-about" class="page-section">
+      <div class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <p>I am a 3rd-year BSIT student at Eastern Samar State University. I'm passionate about creating clean, responsive, and visually appealing websites. I enjoy turning ideas into functional experiences using modern web technologies.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <i class="fa-solid fa-laptop-code card-icon"></i>
+            <h3>Clean Code</h3>
+            <p>Writing well-structured, semantic HTML and core programming logic.</p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-code card-icon"></i>
+            <h3>Modern Styling</h3>
+            <p>Crafting visually appealing interfaces and responsive design.</p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-database card-icon"></i>
+            <h3>Data Management</h3>
+            <p>Building and managing efficient databases using SQL and PHP.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: SKILLS -->
     <section id="page-skills" class="page-section">
-      <div class="container">
+      <div class="container" style="padding-top: 4rem;">
         <div class="section-header">
           <h2>My Tech Stack</h2>
           <p>I specialize in building responsive web applications and managing databases. I am always eager to expand my technical skill set and apply it to real-world problems.</p>
@@ -97,9 +99,9 @@
       </div>
     </section>
 
-    <!-- PAGE 3: PROJECTS -->
+    <!-- PAGE 4: PROJECTS -->
     <section id="page-projects" class="page-section">
-      <div class="container">
+      <div class="container" style="padding-top: 4rem;">
         <div class="section-header">
           <h2>My Projects</h2>
           <p>Here are some of the projects I've worked on, showcasing my skills in creating functional, visually appealing, and user-friendly websites.</p>
@@ -120,7 +122,6 @@
                 <span class="tag">PHP</span>
                 <span class="tag">MySQL</span>
               </div>
-              <a href="#" class="btn-brutal" style="text-align: center;">View Project</a>
             </div>
           </div>
           
@@ -137,16 +138,15 @@
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
               </div>
-              <a href="#" class="btn-brutal" style="text-align: center;">View Project</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PAGE 4: CONTACT -->
+    <!-- PAGE 5: CONTACT -->
     <section id="page-contact" class="page-section">
-      <div class="container text-center">
+      <div class="container text-center" style="padding-top: 4rem;">
         <div class="section-header">
           <h2>Get in Touch</h2>
           <p>I am currently seeking internship opportunities and academic collaborations. Feel free to reach out if you have any questions or just want to say hi!</p>
