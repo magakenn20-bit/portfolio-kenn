@@ -18,11 +18,12 @@
     <div class="nav-container">
       <nav class="nav-links">
         <a href="#" class="btn-brutal nav-btn active" onclick="showPage('home', this)">Home</a>
-        <!-- BAGONG ABOUT BUTTON -->
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('about', this)">About</a>
+        <!-- BAGONG EXPERIENCE BUTTON -->
+        <a href="#" class="btn-brutal nav-btn" onclick="showPage('experience', this)">Experience</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('skills', this)">Skills</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('projects', this)">Projects</a>
-        <a href="#" class="btn-brutal nav-btn" onclick="showPage('contact', this)">Contact Me</a>
+        <a href="#" class="btn-brutal nav-btn" onclick="showPage('contact', this)">Contact</a>
       </nav>
     </div>
   </header>
@@ -30,7 +31,7 @@
   <!-- MAIN CONTAINER -->
   <main id="app-container">
 
-    <!-- PAGE 1: HOME (Hero ONLY - No Scroll) -->
+    <!-- PAGE 1: HOME -->
     <section id="page-home" class="page-section active">
       <div class="hero">
         <div class="hero-content">
@@ -41,8 +42,8 @@
           <p class="hero-quote">"Turning curiosity into code."</p>
           
           <div class="hero-buttons">
-            <!-- Index 3 na ngayon ang Projects dahil may About na -->
-            <a href="#" class="btn-brutal" onclick="showPage('projects', document.querySelectorAll('.nav-btn')[3])">View My Work</a>
+            <!-- Projects is index 4 now -->
+            <a href="#" class="btn-brutal" onclick="showPage('projects', document.querySelectorAll('.nav-btn')[4])">View My Work</a>
           </div>
         </div>
         
@@ -52,7 +53,7 @@
       </div>
     </section>
 
-    <!-- PAGE 2: ABOUT (Inilipat dito) -->
+    <!-- PAGE 2: ABOUT -->
     <section id="page-about" class="page-section">
       <div class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -80,7 +81,43 @@
       </div>
     </section>
 
-    <!-- PAGE 3: SKILLS -->
+    <!-- PAGE 3: EXPERIENCE (BAGONG PAGE) -->
+    <section id="page-experience" class="page-section">
+      <div class="container" style="padding-top: 4rem; max-width: 900px;">
+        
+        <div class="exp-title-wrapper">
+          <h2>Experience & Education</h2>
+        </div>
+
+        <div class="exp-edu-grid">
+          
+          <!-- Experience Column -->
+          <div class="exp-column">
+            <h3>EXPERIENCE</h3>
+            <div class="exp-card">
+              <span class="exp-date">2025 — Present</span>
+              <h4>Academic Web Development Projects</h4>
+              <span class="exp-subtitle">BSIT Coursework</span>
+              <p>Created responsive web interface layouts and functional prototypes as part of 3rd-year IT specialization studies.</p>
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="exp-column">
+            <h3>EDUCATION</h3>
+            <div class="exp-card">
+              <span class="exp-date">2025 — Present</span>
+              <h4>Bachelor of Science in Information Technology</h4>
+              <span class="exp-subtitle">Eastern Samar State University (BSIT-3C)</span>
+              <p>Relevant Coursework: Web Systems & Technologies, Object-Oriented Programming, UI/UX Design, and Database Management.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: SKILLS -->
     <section id="page-skills" class="page-section">
       <div class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -99,7 +136,7 @@
       </div>
     </section>
 
-    <!-- PAGE 4: PROJECTS -->
+    <!-- PAGE 5: PROJECTS -->
     <section id="page-projects" class="page-section">
       <div class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -144,7 +181,7 @@
       </div>
     </section>
 
-    <!-- PAGE 5: CONTACT -->
+    <!-- PAGE 6: CONTACT -->
     <section id="page-contact" class="page-section">
       <div class="container text-center" style="padding-top: 4rem;">
         <div class="section-header">
