@@ -3,112 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenn Bagaporo Maga | Portfolio</title>
+  <title>Kenn Bagaporo Maga | Projects</title>
   
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Navbar -->
-  <header id="navbar">
+  <header id="navbar" class="scrolled"> <!-- 'scrolled' class para may kulay agad -->
     <div class="nav-container">
-      
-      <!-- YOUR LOGO -->
-      <a href="#home" class="logo">&lt;Kenn/&gt;</a>
+      <a href="index.html" class="logo">&lt;Kenn/&gt;</a>
       
       <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="projects.html" style="color: var(--accent-rose-hover); font-weight: 700;">Projects</a> <!-- Highlighted kasi nasa Projects page tayo -->
+        <a href="index.html#contact">Contact</a>
       </nav>
       
-      <!-- Navbar Contact Button -->
-      <a href="#contact" class="btn-brutal">Contact Me</a>
+      <a href="index.html#contact" class="btn-brutal">Contact Me</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Hi, I’m Kenn Bagaporo Maga</h1>
-      <p class="hero-subtitle">
-        Aspiring <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
-      </p>
-      <p class="hero-quote">"Turning curiosity into code."</p>
-      
-      <!-- Updated Hero Buttons -->
-      <div class="hero-buttons">
-        <a href="#projects" class="btn-brutal">View My Work</a>
-        <a href="#contact" class="btn-brutal btn-outline">Contact Me</a>
-      </div>
-    </div>
-    
-    <div class="hero-image-wrapper">
-      <img src="profile.jpg" alt="Kenn Bagaporo Maga" class="hero-profile-img">
-    </div>
-  </section>
-
-  <!-- About/Highlights Section -->
-  <section class="about bg-white">
-    <div class="container">
-      <div class="section-header">
-        <h2>About Me</h2>
-        <p>I am a 3rd-year BSIT student at Eastern Samar State University. I'm passionate about creating clean, responsive, and visually appealing websites. I enjoy turning ideas into functional experiences using modern web technologies.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <i class="fa-solid fa-laptop-code card-icon"></i>
-          <h3>Clean Code</h3>
-          <p>Writing well-structured, semantic HTML and core programming logic.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-code card-icon"></i>
-          <h3>Modern Styling</h3>
-          <p>Crafting visually appealing interfaces and responsive design.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-database card-icon"></i>
-          <h3>Data Management</h3>
-          <p>Building and managing efficient databases using SQL and PHP.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="skills bg-rose">
-    <div class="container">
-      <div class="section-header">
-        <h2>My Tech Stack</h2>
-        <p>I specialize in building responsive web applications and managing databases. I am always eager to expand my technical skill set and apply it to real-world problems.</p>
-      </div>
-
-      <div class="grid-skills">
-        <div class="skill-card"><i class="fa-brands fa-html5 text-orange"></i><p>HTML</p></div>
-        <div class="skill-card"><i class="fa-brands fa-css3-alt text-blue"></i><p>CSS</p></div>
-        <div class="skill-card"><i class="fa-brands fa-js text-yellow"></i><p>JavaScript</p></div>
-        <div class="skill-card"><i class="fa-brands fa-php text-indigo"></i><p>PHP</p></div>
-        <div class="skill-card"><i class="fa-solid fa-database text-blue-dark"></i><p>MySQL</p></div>
-        <div class="skill-card"><i class="fa-brands fa-git-alt text-red"></i><p>Git</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- Projects Section -->
-  <section id="projects" class="projects">
+  <section id="projects" class="projects bg-orange" style="min-height: 80vh;">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-top: 2rem;">
         <h2>My Projects</h2>
         <p>Here are some of the projects I've worked on, showcasing my skills in creating functional, visually appealing, and user-friendly websites.</p>
       </div>
@@ -149,21 +72,10 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- NEW Contact Section -->
-  <section id="contact" class="contact bg-white">
-    <div class="container text-center">
-      <div class="section-header">
-        <h2>Get in Touch</h2>
-        <p>I am currently seeking internship opportunities and academic collaborations. Feel free to reach out if you have any questions or just want to say hi!</p>
-      </div>
       
-      <div class="contact-btn-wrapper">
-        <a href="mailto:kenn.maga@example.com" class="btn-brutal btn-large">
-          <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i> Email Me
-        </a>
+      <!-- Button para bumalik sa Home -->
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="index.html" class="btn-brutal btn-outline">← Back to Home</a>
       </div>
     </div>
   </section>
@@ -178,10 +90,9 @@
       <div>
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -200,54 +111,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    const words = ["IT Student", "Web Developer"];
-    let i = 0;
-    let timer;
-    
-    function typingEffect() {
-      let word = words[i].split("");
-      var loopTyping = function() {
-        if (word.length > 0) {
-          document.getElementById('typewriter').innerHTML += word.shift();
-        } else {
-          deletingEffect();
-          return false;
-        }
-        timer = setTimeout(loopTyping, 100);
-      };
-      loopTyping();
-    }
-
-    function deletingEffect() {
-      let word = words[i].split("");
-      var loopDeleting = function() {
-        if (word.length > 0) {
-          word.pop();
-          document.getElementById('typewriter').innerHTML = word.join("");
-        } else {
-          if (words.length > (i + 1)) {
-            i++;
-          } else {
-            i = 0;
-          }
-          typingEffect();
-          return false;
-        }
-        timer = setTimeout(loopDeleting, 50);
-      };
-      setTimeout(loopDeleting, 1500);
-    }
-    typingEffect();
   </script>
 </body>
 </html>

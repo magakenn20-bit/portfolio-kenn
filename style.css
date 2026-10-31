@@ -37,6 +37,7 @@ body {
 
 .bg-white { background-color: var(--bg-white); }
 .bg-rose { background-color: var(--bg-rose); }
+.bg-orange { background-color: var(--bg-orange); }
 .text-center { text-align: center; }
 
 /* Neo-Brutalist Shadows & Borders */
