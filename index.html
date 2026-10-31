@@ -43,7 +43,8 @@
     </div>
     
     <div class="hero-image-wrapper reveal delay-1">
-      <div class="hero-image-placeholder">KM</div>
+      <!-- YOUR PROFILE PICTURE HERE -->
+      <img src="profile.jpg" alt="Kenn Bagaporo Maga" class="hero-profile-img">
     </div>
   </section>
 
@@ -105,7 +106,10 @@
       <div class="grid-2">
         <!-- Project 1 -->
         <div class="project-card reveal">
-          <div class="project-image">Project Preview</div>
+          <!-- YOUR PROJECT IMAGE HERE -->
+          <div class="project-image">
+            <img src="project1.jpg" alt="Student Information System Preview">
+          </div>
           <div class="project-info">
             <h3>Student Information System</h3>
             <p>A web-based academic records platform designed to help faculty and students track enrollment, course grades, and personal details efficiently.</p>
@@ -121,7 +125,9 @@
         
         <!-- Project 2 -->
         <div class="project-card reveal delay-1">
-          <div class="project-image">Project Preview</div>
+          <div class="project-image" style="display: flex; align-items: center; justify-content: center; color: #78716c; font-weight: 700;">
+            Project Preview
+          </div>
           <div class="project-info">
             <h3>Personal Portfolio</h3>
             <p>A responsive personal portfolio showcasing my skills and projects with modern UI design and smooth animations.</p>
@@ -168,10 +174,8 @@
 
   <!-- JavaScript for Animations and Typewriter -->
   <script>
-    // 1. Update Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 2. Sticky Navbar Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) {
@@ -181,7 +185,6 @@
       }
     });
 
-    // 3. Typewriter Effect
     const words = ["IT Student", "Web Developer"];
     let i = 0;
     let timer;
@@ -221,7 +224,6 @@
     }
     typingEffect();
 
-    // 4. Scroll Reveal Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
