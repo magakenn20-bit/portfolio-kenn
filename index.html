@@ -16,24 +16,21 @@
   <!-- Navbar -->
   <header id="navbar" class="scrolled">
     <div class="nav-container">
-      <!-- Tinanggal ang <Kenn/> logo -->
-      
       <nav class="nav-links">
-        <!-- Ginawang buttons lahat ng links -->
         <a href="#" class="btn-brutal nav-btn active" onclick="showPage('home', this)">Home</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('skills', this)">Skills</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('projects', this)">Projects</a>
         <a href="#" class="btn-brutal nav-btn" onclick="showPage('contact', this)">Contact Me</a>
       </nav>
-      
     </div>
   </header>
 
   <!-- MAIN CONTAINER -->
   <main id="app-container">
 
-    <!-- PAGE 1: HOME -->
+    <!-- PAGE 1: HOME (Hero + About) -->
     <section id="page-home" class="page-section active">
+      <!-- Hero Section -->
       <div class="hero">
         <div class="hero-content">
           <h1 class="hero-title">Hi, I’m Kenn Bagaporo Maga</h1>
@@ -51,6 +48,34 @@
           <img src="profile.jpg" alt="Kenn Bagaporo Maga" class="hero-profile-img">
         </div>
       </div>
+
+      <!-- About Section (Ibinalik para hindi empty ang Home) -->
+      <section class="about bg-white">
+        <div class="container">
+          <div class="section-header">
+            <h2>About Me</h2>
+            <p>I am a 3rd-year BSIT student at Eastern Samar State University. I'm passionate about creating clean, responsive, and visually appealing websites. I enjoy turning ideas into functional experiences using modern web technologies.</p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <i class="fa-solid fa-laptop-code card-icon"></i>
+              <h3>Clean Code</h3>
+              <p>Writing well-structured, semantic HTML and core programming logic.</p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-code card-icon"></i>
+              <h3>Modern Styling</h3>
+              <p>Crafting visually appealing interfaces and responsive design.</p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-database card-icon"></i>
+              <h3>Data Management</h3>
+              <p>Building and managing efficient databases using SQL and PHP.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <!-- PAGE 2: SKILLS -->
@@ -95,7 +120,7 @@
                 <span class="tag">PHP</span>
                 <span class="tag">MySQL</span>
               </div>
-              <a href="#" class="btn-brutal">View Project</a>
+              <a href="#" class="btn-brutal" style="text-align: center;">View Project</a>
             </div>
           </div>
           
@@ -112,7 +137,7 @@
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
               </div>
-              <a href="#" class="btn-brutal">View Project</a>
+              <a href="#" class="btn-brutal" style="text-align: center;">View Project</a>
             </div>
           </div>
         </div>
@@ -133,11 +158,9 @@
           </a>
         </div>
 
-        <!-- SOCIAL LINKS MO -->
         <div class="social-links-wrapper">
           <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem; color: var(--text-stone);">Connect with me</h3>
           <div class="social-links">
-            <!-- Palitan mo yung href ng totoong link mo -->
             <a href="https://github.com/magakenn20-bit" target="_blank" title="GitHub">
               <i class="fa-brands fa-github"></i>
             </a>
@@ -154,9 +177,9 @@
 
   </main>
 
-  <!-- Footer (Fixed sa baba) -->
-  <footer style="margin-top: 0; position: fixed; bottom: 0; width: 100%; padding: 1rem 0; z-index: 1000;">
-    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
       <p>&copy; <span id="year"></span> Kenn Bagaporo Maga. All rights reserved.</p>
     </div>
   </footer>
@@ -202,17 +225,13 @@
 
     // TAB SYSTEM LOGIC
     function showPage(pageId, clickedElement = null) {
-      // Hide all pages
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => sec.classList.remove('active'));
       
-      // Show target page
       document.getElementById('page-' + pageId).classList.add('active');
       
-      // Scroll to top in case of overflow
       window.scrollTo(0, 0);
       
-      // Highlight active nav button
       if (clickedElement) {
         document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
         clickedElement.classList.add('active');

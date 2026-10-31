@@ -17,9 +17,8 @@
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-  overflow: hidden; /* Walang scroll sa buong page */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,6 +27,7 @@ body {
   color: var(--text-stone);
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Sinisiguro na umaabot sa baba ang page */
 }
 
 /* --- Navbar --- */
@@ -38,7 +38,6 @@ header {
   background: linear-gradient(90deg, #fed7aa, #fecdd3);
   border-bottom: 2px solid var(--border-color);
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  flex-shrink: 0; /* Para hindi umikli ang navbar */
 }
 
 .nav-container {
@@ -85,27 +84,14 @@ header {
 /* --- TAB SYSTEM CSS --- */
 .page-section {
   display: none;
-  flex-grow: 1; 
+  flex-grow: 1;
   width: 100%;
-  overflow-y: auto; /* Dito lang nangyayari ang scroll kung mahaba ang content */
-  
-  /* Space sa taas at baba para hindi matakpan ng navbar at footer */
-  padding-top: 3rem; 
-  padding-bottom: 4rem; 
+  padding-bottom: 4rem; /* Space bago ang footer */
   animation: fadeIn 0.3s ease-in-out;
 }
 
 .page-section.active {
-  display: block; 
-}
-
-/* Ang Home page lang ang naka-center vertically */
-#page-home.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0; 
+  display: block;
 }
 
 @keyframes fadeIn {
@@ -123,15 +109,17 @@ header {
 
 .text-center { text-align: center; }
 
-/* --- Hero Section (Home) --- */
+/* --- Hero Section --- */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1100px;
-  padding: 0 2rem;
+  margin: 0 auto;
+  padding: 5rem 2rem;
   gap: 2rem;
+  min-height: 80vh; /* Para sakop ang buong screen */
 }
 
 .hero-content {
@@ -187,7 +175,12 @@ header {
   background-color: var(--accent-rose);
 }
 
-/* --- Section Headers --- */
+/* --- Sections Common --- */
+section { padding: 4rem 0; }
+
+.bg-white { background-color: var(--bg-white); }
+.bg-rose { background-color: var(--bg-rose); }
+
 .section-header {
   text-align: center;
   max-width: 700px;
@@ -204,6 +197,39 @@ header {
   color: var(--text-muted);
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+/* --- Highlights Cards (About) --- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--bg-orange);
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid var(--border-color);
+  box-shadow: 6px 6px 0px var(--shadow-color);
+  border-radius: 12px;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-stone);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 /* --- Skills Section --- */
@@ -261,7 +287,7 @@ header {
   overflow: hidden;
   transition: transform 0.2s ease;
   display: flex;
-  flex-direction: column; /* Para pantay ang haba ng cards */
+  flex-direction: column;
 }
 
 .project-card:hover { transform: translateY(-5px); }
@@ -347,8 +373,9 @@ header {
 footer {
   background-color: #1c1917;
   color: #fff;
-  flex-shrink: 0; 
-  padding: 1rem 0;
+  margin-top: auto; /* Pinipilit ang footer sa baba */
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--border-color);
 }
 
 footer p { color: #a8a29e; font-size: 0.9rem; text-align: center; }
@@ -358,8 +385,8 @@ footer p { color: #a8a29e; font-size: 0.9rem; text-align: center; }
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 1rem;
-    gap: 1.5rem;
+    padding: 3rem 2rem;
+    gap: 2rem;
   }
   
   .hero-title { font-size: 2.5rem; }
@@ -374,10 +401,5 @@ footer p { color: #a8a29e; font-size: 0.9rem; text-align: center; }
   .btn-brutal {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
-  }
-
-  .page-section {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
   }
 }
