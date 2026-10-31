@@ -26,6 +26,9 @@ body {
   background-color: var(--bg-orange);
   color: var(--text-stone);
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* --- Typography & Layout Utilities --- */
@@ -40,10 +43,19 @@ body {
 .bg-orange { background-color: var(--bg-orange); }
 .text-center { text-align: center; }
 
-/* Neo-Brutalist Shadows & Borders */
-.card, .skill-card, .project-card, .btn-brutal {
-  border: 2px solid var(--border-color);
-  box-shadow: 6px 6px 0px var(--shadow-color);
+/* --- TAB SYSTEM CSS --- */
+.page-section {
+  display: none; /* Itago lahat ng pages by default */
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.page-section.active {
+  display: block; /* Ipakita lang yung active */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Navbar --- */
@@ -90,7 +102,18 @@ header.scrolled {
   font-weight: 500;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--accent-rose-hover); }
+
+.nav-links a:hover { 
+  color: var(--accent-rose-hover); 
+}
+
+/* Active Nav Button Style */
+.nav-links a.active {
+  color: var(--accent-rose-hover);
+  font-weight: 800;
+  border-bottom: 3px solid var(--accent-rose-hover);
+  padding-bottom: 5px;
+}
 
 /* --- Buttons --- */
 .btn-brutal {
@@ -101,6 +124,8 @@ header.scrolled {
   text-decoration: none;
   padding: 0.6rem 1.5rem;
   border-radius: 6px;
+  border: 2px solid var(--border-color);
+  box-shadow: 6px 6px 0px var(--shadow-color);
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -114,11 +139,9 @@ header.scrolled {
 .btn-outline {
   background-color: transparent;
 }
-
 .btn-outline:hover {
   background-color: #fff;
 }
-
 .btn-large {
   font-size: 1.2rem;
   padding: 1rem 2.5rem;
@@ -162,9 +185,7 @@ header.scrolled {
   animation: blink 1s infinite;
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
-}
+@keyframes blink { 50% { opacity: 0; } }
 
 .hero-quote {
   font-size: 1.1rem;
@@ -196,7 +217,7 @@ header.scrolled {
 }
 
 /* --- Sections Common --- */
-section { padding: 5rem 0; }
+section { padding: 4rem 0; }
 
 .section-header {
   text-align: center;
@@ -223,10 +244,15 @@ section { padding: 5rem 0; }
   gap: 2rem;
 }
 
-.card {
+.card, .skill-card, .project-card {
+  border: 2px solid var(--border-color);
+  box-shadow: 6px 6px 0px var(--shadow-color);
   background-color: var(--bg-orange);
-  padding: 2rem;
   border-radius: 12px;
+}
+
+.card {
+  padding: 2rem;
   text-align: center;
 }
 
@@ -257,14 +283,11 @@ section { padding: 5rem 0; }
 .skill-card {
   background-color: #fff;
   padding: 2rem;
-  border-radius: 12px;
   text-align: center;
   transition: transform 0.2s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
-}
+.skill-card:hover { transform: translateY(-5px); }
 
 .skill-card i {
   font-size: 4rem;
@@ -276,7 +299,6 @@ section { padding: 5rem 0; }
   font-size: 1.1rem;
 }
 
-/* Icon Colors */
 .text-orange { color: #f97316; }
 .text-blue { color: #3b82f6; }
 .text-yellow { color: #eab308; }
@@ -293,14 +315,11 @@ section { padding: 5rem 0; }
 
 .project-card {
   background-color: #fff;
-  border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-}
+.project-card:hover { transform: translateY(-5px); }
 
 .project-image {
   height: 250px; 
@@ -316,13 +335,9 @@ section { padding: 5rem 0; }
   transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-image img {
-  transform: scale(1.05); 
-}
+.project-card:hover .project-image img { transform: scale(1.05); }
 
-.project-info {
-  padding: 2rem;
-}
+.project-info { padding: 2rem; }
 
 .project-info h3 {
   font-size: 1.5rem;
@@ -355,10 +370,6 @@ section { padding: 5rem 0; }
 }
 
 /* --- Contact Section --- */
-.contact {
-  border-top: 2px solid var(--border-color);
-}
-
 .contact-btn-wrapper {
   margin-top: 2rem;
   display: flex;
@@ -371,6 +382,7 @@ footer {
   color: #fff;
   padding: 4rem 0 2rem 0;
   border-top: 2px solid var(--border-color);
+  margin-top: auto; /* Para sa sticky footer */
 }
 
 .footer-grid {
@@ -387,10 +399,7 @@ footer {
   margin-bottom: 1rem;
 }
 
-footer p {
-  color: #a8a29e;
-  font-size: 0.95rem;
-}
+footer p { color: #a8a29e; font-size: 0.95rem; }
 
 footer h3 {
   font-size: 1.2rem;
@@ -398,10 +407,7 @@ footer h3 {
   margin-bottom: 1rem;
 }
 
-footer ul {
-  list-style: none;
-}
-
+footer ul { list-style: none; }
 footer ul li { margin-bottom: 0.5rem; }
 
 footer ul a {
@@ -409,7 +415,6 @@ footer ul a {
   text-decoration: none;
   transition: color 0.2s;
 }
-
 footer ul a:hover { color: var(--accent-rose); }
 
 .social-links {
@@ -443,14 +448,8 @@ footer ul a:hover { color: var(--accent-rose); }
     gap: 3rem;
   }
   
-  .hero-content {
-    margin: 0 auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
+  .hero-content { margin: 0 auto; }
+  .hero-buttons { justify-content: center; }
   .hero-title { font-size: 2.5rem; }
   
   .nav-links { display: none; }

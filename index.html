@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenn Bagaporo Maga | Projects</title>
+  <title>Kenn Bagaporo Maga | Portfolio</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,71 +14,157 @@
 <body>
 
   <!-- Navbar -->
-  <header id="navbar" class="scrolled"> <!-- 'scrolled' class para may kulay agad -->
+  <header id="navbar" class="scrolled">
     <div class="nav-container">
-      <a href="index.html" class="logo">&lt;Kenn/&gt;</a>
+      <a href="#" class="logo" onclick="showPage('home')">&lt;Kenn/&gt;</a>
       
       <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="projects.html" style="color: var(--accent-rose-hover); font-weight: 700;">Projects</a> <!-- Highlighted kasi nasa Projects page tayo -->
-        <a href="index.html#contact">Contact</a>
+        <!-- Binago natin ang href para hindi mag-scroll, JS na ang bahala -->
+        <a href="#" class="nav-btn active" onclick="showPage('home', this)">Home</a>
+        <a href="#" class="nav-btn" onclick="showPage('skills', this)">Skills</a>
+        <a href="#" class="nav-btn" onclick="showPage('projects', this)">Projects</a>
+        <a href="#" class="nav-btn" onclick="showPage('contact', this)">Contact</a>
       </nav>
       
-      <a href="index.html#contact" class="btn-brutal">Contact Me</a>
+      <a href="#" class="btn-brutal" onclick="showPage('contact', document.querySelector('.nav-btn:nth-child(4)'))">Contact Me</a>
     </div>
   </header>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects bg-orange" style="min-height: 80vh;">
-    <div class="container">
-      <div class="section-header" style="margin-top: 2rem;">
-        <h2>My Projects</h2>
-        <p>Here are some of the projects I've worked on, showcasing my skills in creating functional, visually appealing, and user-friendly websites.</p>
-      </div>
+  <!-- MAIN CONTAINER -->
+  <main id="app-container">
 
-      <div class="grid-2">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="project1.jpg" alt="Student Information System Preview">
-          </div>
-          <div class="project-info">
-            <h3>Student Information System</h3>
-            <p>A web-based academic records platform designed to help faculty and students track enrollment, course grades, and personal details efficiently.</p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-            </div>
-            <a href="#" class="btn-brutal">View Project</a>
+    <!-- PAGE 1: HOME (Hero + About) -->
+    <section id="page-home" class="page-section active">
+      <div class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Hi, I’m Kenn Bagaporo Maga</h1>
+          <p class="hero-subtitle">
+            Aspiring <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
+          </p>
+          <p class="hero-quote">"Turning curiosity into code."</p>
+          
+          <div class="hero-buttons">
+            <!-- Papunta sa Projects page/tab -->
+            <a href="#" class="btn-brutal" onclick="showPage('projects', document.querySelector('.nav-btn:nth-child(3)'))">View My Work</a>
           </div>
         </div>
         
-        <!-- Project 2 (Placeholder) -->
-        <div class="project-card">
-          <div class="project-image" style="display: flex; align-items: center; justify-content: center; color: #78716c; font-weight: 700;">
-            Project Preview
+        <div class="hero-image-wrapper">
+          <img src="profile.jpg" alt="Kenn Bagaporo Maga" class="hero-profile-img">
+        </div>
+      </div>
+
+      <section class="about bg-white">
+        <div class="container">
+          <div class="section-header">
+            <h2>About Me</h2>
+            <p>I am a 3rd-year BSIT student at Eastern Samar State University. I'm passionate about creating clean, responsive, and visually appealing websites. I enjoy turning ideas into functional experiences using modern web technologies.</p>
           </div>
-          <div class="project-info">
-            <h3>Personal Portfolio</h3>
-            <p>A responsive personal portfolio showcasing my skills and projects with modern UI design and smooth animations.</p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
+
+          <div class="grid-3">
+            <div class="card">
+              <i class="fa-solid fa-laptop-code card-icon"></i>
+              <h3>Clean Code</h3>
+              <p>Writing well-structured, semantic HTML and core programming logic.</p>
             </div>
-            <a href="#" class="btn-brutal">View Project</a>
+            <div class="card">
+              <i class="fa-solid fa-code card-icon"></i>
+              <h3>Modern Styling</h3>
+              <p>Crafting visually appealing interfaces and responsive design.</p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-database card-icon"></i>
+              <h3>Data Management</h3>
+              <p>Building and managing efficient databases using SQL and PHP.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- PAGE 2: SKILLS -->
+    <section id="page-skills" class="page-section bg-rose" style="min-height: 100vh; padding-top: 8rem;">
+      <div class="container">
+        <div class="section-header">
+          <h2>My Tech Stack</h2>
+          <p>I specialize in building responsive web applications and managing databases. I am always eager to expand my technical skill set and apply it to real-world problems.</p>
+        </div>
+
+        <div class="grid-skills">
+          <div class="skill-card"><i class="fa-brands fa-html5 text-orange"></i><p>HTML</p></div>
+          <div class="skill-card"><i class="fa-brands fa-css3-alt text-blue"></i><p>CSS</p></div>
+          <div class="skill-card"><i class="fa-brands fa-js text-yellow"></i><p>JavaScript</p></div>
+          <div class="skill-card"><i class="fa-brands fa-php text-indigo"></i><p>PHP</p></div>
+          <div class="skill-card"><i class="fa-solid fa-database text-blue-dark"></i><p>MySQL</p></div>
+          <div class="skill-card"><i class="fa-brands fa-git-alt text-red"></i><p>Git</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: PROJECTS -->
+    <section id="page-projects" class="page-section bg-orange" style="min-height: 100vh; padding-top: 8rem;">
+      <div class="container">
+        <div class="section-header">
+          <h2>My Projects</h2>
+          <p>Here are some of the projects I've worked on, showcasing my skills in creating functional, visually appealing, and user-friendly websites.</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="project1.jpg" alt="Student Information System Preview">
+            </div>
+            <div class="project-info">
+              <h3>Student Information System</h3>
+              <p>A web-based academic records platform designed to help faculty and students track enrollment, course grades, and personal details efficiently.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <a href="#" class="btn-brutal">View Project</a>
+            </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-image" style="display: flex; align-items: center; justify-content: center; color: #78716c; font-weight: 700;">
+              Project Preview
+            </div>
+            <div class="project-info">
+              <h3>Personal Portfolio</h3>
+              <p>A responsive personal portfolio showcasing my skills and projects with modern UI design and smooth animations.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <a href="#" class="btn-brutal">View Project</a>
+            </div>
           </div>
         </div>
       </div>
-      
-      <!-- Button para bumalik sa Home -->
-      <div style="text-align: center; margin-top: 4rem;">
-        <a href="index.html" class="btn-brutal btn-outline">← Back to Home</a>
+    </section>
+
+    <!-- PAGE 4: CONTACT -->
+    <section id="page-contact" class="page-section bg-white" style="min-height: 100vh; display: flex; align-items: center;">
+      <div class="container text-center" style="width: 100%;">
+        <div class="section-header">
+          <h2>Get in Touch</h2>
+          <p>I am currently seeking internship opportunities and academic collaborations. Feel free to reach out if you have any questions or just want to say hi!</p>
+        </div>
+        
+        <div class="contact-btn-wrapper">
+          <a href="mailto:kenn.maga@example.com" class="btn-brutal btn-large">
+            <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i> Email Me
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -90,9 +176,10 @@
       <div>
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#" onclick="showPage('home', document.querySelector('.nav-btn:nth-child(1)'))">Home</a></li>
+          <li><a href="#" onclick="showPage('skills', document.querySelector('.nav-btn:nth-child(2)'))">Skills</a></li>
+          <li><a href="#" onclick="showPage('projects', document.querySelector('.nav-btn:nth-child(3)'))">Projects</a></li>
+          <li><a href="#" onclick="showPage('contact', document.querySelector('.nav-btn:nth-child(4)'))">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -110,7 +197,63 @@
   </footer>
 
   <script>
+    // 1. Update Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 2. Typewriter Effect
+    const words = ["IT Student", "Web Developer"];
+    let i = 0;
+    let timer;
+    
+    function typingEffect() {
+      let word = words[i].split("");
+      var loopTyping = function() {
+        if (word.length > 0) {
+          document.getElementById('typewriter').innerHTML += word.shift();
+        } else {
+          deletingEffect();
+          return false;
+        }
+        timer = setTimeout(loopTyping, 100);
+      };
+      loopTyping();
+    }
+
+    function deletingEffect() {
+      let word = words[i].split("");
+      var loopDeleting = function() {
+        if (word.length > 0) {
+          word.pop();
+          document.getElementById('typewriter').innerHTML = word.join("");
+        } else {
+          if (words.length > (i + 1)) { i++; } else { i = 0; }
+          typingEffect();
+          return false;
+        }
+        timer = setTimeout(loopDeleting, 50);
+      };
+      setTimeout(loopDeleting, 1500);
+    }
+    typingEffect();
+
+    // 3. TAB SYSTEM LOGIC (Ito yung nagpapalit ng "page" kapag pinindot ang button)
+    function showPage(pageId, clickedElement = null) {
+      // Itago lahat ng sections
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      // Ipakita yung pinindot na section
+      document.getElementById('page-' + pageId).classList.add('active');
+
+      // Scroll to top para hindi lumabas sa gitna
+      window.scrollTo(0, 0);
+
+      // Highlight yung active na button sa Navbar
+      if (clickedElement) {
+        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+        clickedElement.classList.add('active');
+      }
+    }
   </script>
 </body>
 </html>
