@@ -16,24 +16,23 @@
   <!-- Navbar -->
   <header id="navbar" class="scrolled">
     <div class="nav-container">
-      <a href="#" class="logo" onclick="showPage('home')">&lt;Kenn/&gt;</a>
+      <!-- Tinanggal ang <Kenn/> logo dito -->
       
       <nav class="nav-links">
-        <!-- Binago natin ang href para hindi mag-scroll, JS na ang bahala -->
-        <a href="#" class="nav-btn active" onclick="showPage('home', this)">Home</a>
-        <a href="#" class="nav-btn" onclick="showPage('skills', this)">Skills</a>
-        <a href="#" class="nav-btn" onclick="showPage('projects', this)">Projects</a>
-        <a href="#" class="nav-btn" onclick="showPage('contact', this)">Contact</a>
+        <!-- Ginawa nating buttons lahat ng links kagaya ng Contact Me -->
+        <a href="#" class="btn-brutal nav-btn active" onclick="showPage('home', this)">Home</a>
+        <a href="#" class="btn-brutal nav-btn" onclick="showPage('skills', this)">Skills</a>
+        <a href="#" class="btn-brutal nav-btn" onclick="showPage('projects', this)">Projects</a>
+        <a href="#" class="btn-brutal nav-btn" onclick="showPage('contact', this)">Contact Me</a>
       </nav>
       
-      <a href="#" class="btn-brutal" onclick="showPage('contact', document.querySelector('.nav-btn:nth-child(4)'))">Contact Me</a>
     </div>
   </header>
 
   <!-- MAIN CONTAINER -->
   <main id="app-container">
 
-    <!-- PAGE 1: HOME (Hero + About) -->
+    <!-- PAGE 1: HOME -->
     <section id="page-home" class="page-section active">
       <div class="hero">
         <div class="hero-content">
@@ -44,8 +43,7 @@
           <p class="hero-quote">"Turning curiosity into code."</p>
           
           <div class="hero-buttons">
-            <!-- Papunta sa Projects page/tab -->
-            <a href="#" class="btn-brutal" onclick="showPage('projects', document.querySelector('.nav-btn:nth-child(3)'))">View My Work</a>
+            <a href="#" class="btn-brutal" onclick="showPage('projects', document.querySelectorAll('.nav-btn')[2])">View My Work</a>
           </div>
         </div>
         
@@ -53,37 +51,10 @@
           <img src="profile.jpg" alt="Kenn Bagaporo Maga" class="hero-profile-img">
         </div>
       </div>
-
-      <section class="about bg-white">
-        <div class="container">
-          <div class="section-header">
-            <h2>About Me</h2>
-            <p>I am a 3rd-year BSIT student at Eastern Samar State University. I'm passionate about creating clean, responsive, and visually appealing websites. I enjoy turning ideas into functional experiences using modern web technologies.</p>
-          </div>
-
-          <div class="grid-3">
-            <div class="card">
-              <i class="fa-solid fa-laptop-code card-icon"></i>
-              <h3>Clean Code</h3>
-              <p>Writing well-structured, semantic HTML and core programming logic.</p>
-            </div>
-            <div class="card">
-              <i class="fa-solid fa-code card-icon"></i>
-              <h3>Modern Styling</h3>
-              <p>Crafting visually appealing interfaces and responsive design.</p>
-            </div>
-            <div class="card">
-              <i class="fa-solid fa-database card-icon"></i>
-              <h3>Data Management</h3>
-              <p>Building and managing efficient databases using SQL and PHP.</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </section>
 
     <!-- PAGE 2: SKILLS -->
-    <section id="page-skills" class="page-section bg-rose" style="min-height: 100vh; padding-top: 8rem;">
+    <section id="page-skills" class="page-section">
       <div class="container">
         <div class="section-header">
           <h2>My Tech Stack</h2>
@@ -102,7 +73,7 @@
     </section>
 
     <!-- PAGE 3: PROJECTS -->
-    <section id="page-projects" class="page-section bg-orange" style="min-height: 100vh; padding-top: 8rem;">
+    <section id="page-projects" class="page-section">
       <div class="container">
         <div class="section-header">
           <h2>My Projects</h2>
@@ -149,8 +120,8 @@
     </section>
 
     <!-- PAGE 4: CONTACT -->
-    <section id="page-contact" class="page-section bg-white" style="min-height: 100vh; display: flex; align-items: center;">
-      <div class="container text-center" style="width: 100%;">
+    <section id="page-contact" class="page-section">
+      <div class="container text-center">
         <div class="section-header">
           <h2>Get in Touch</h2>
           <p>I am currently seeking internship opportunities and academic collaborations. Feel free to reach out if you have any questions or just want to say hi!</p>
@@ -166,41 +137,17 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <h2 class="footer-logo">Kenn Bagaporo Maga</h2>
-        <p>Aspiring IT Professional passionate about creating clean, responsive, and modern websites.</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#" onclick="showPage('home', document.querySelector('.nav-btn:nth-child(1)'))">Home</a></li>
-          <li><a href="#" onclick="showPage('skills', document.querySelector('.nav-btn:nth-child(2)'))">Skills</a></li>
-          <li><a href="#" onclick="showPage('projects', document.querySelector('.nav-btn:nth-child(3)'))">Projects</a></li>
-          <li><a href="#" onclick="showPage('contact', document.querySelector('.nav-btn:nth-child(4)'))">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Connect</h3>
-        <div class="social-links">
-          <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="mailto:kenn.maga@example.com"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
+  <!-- Footer (Optional: pwede tanggalin kung ayaw mo ng footer sa baba) -->
+  <footer style="margin-top: 0; position: fixed; bottom: 0; width: 100%; padding: 1rem 0;">
+    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
       <p>&copy; <span id="year"></span> Kenn Bagaporo Maga. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // 1. Update Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 2. Typewriter Effect
+    // Typewriter Effect
     const words = ["IT Student", "Web Developer"];
     let i = 0;
     let timer;
@@ -236,13 +183,13 @@
     }
     typingEffect();
 
-    // 3. TAB SYSTEM LOGIC (Ito yung nagpapalit ng "page" kapag pinindot ang button)
+    // TAB SYSTEM LOGIC
     function showPage(pageId, clickedElement = null) {
-      // Itago lahat ng sections
+      // Itago lahat ng pages
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => sec.classList.remove('active'));
 
-      // Ipakita yung pinindot na section
+      // Ipakita yung pinindot na page
       document.getElementById('page-' + pageId).classList.add('active');
 
       // Scroll to top para hindi lumabas sa gitna
