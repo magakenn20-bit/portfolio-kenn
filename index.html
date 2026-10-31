@@ -21,12 +21,17 @@
   <!-- Navbar -->
   <header id="navbar">
     <div class="nav-container">
+      
+      <!-- YOUR LOGO: You can change "<Kenn/>" to anything you want -->
       <a href="#" class="logo">&lt;Kenn/&gt;</a>
+      
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
       </nav>
+      
+      <!-- YOUR CONTACT BUTTON -->
       <a href="mailto:kenn.maga@example.com" class="btn-brutal">Contact Me</a>
     </div>
   </header>
@@ -106,7 +111,6 @@
       <div class="grid-2">
         <!-- Project 1 -->
         <div class="project-card reveal">
-          <!-- YOUR PROJECT IMAGE HERE -->
           <div class="project-image">
             <img src="project1.jpg" alt="Student Information System Preview">
           </div>
@@ -172,12 +176,9 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Animations and Typewriter -->
   <script>
-    // 1. Update Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 2. Sticky Navbar Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) {
@@ -187,7 +188,6 @@
       }
     });
 
-    // 3. Typewriter Effect
     const words = ["IT Student", "Web Developer"];
     let i = 0;
     let timer;
@@ -227,7 +227,6 @@
     }
     typingEffect();
 
-    // 4. Scroll Reveal Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
