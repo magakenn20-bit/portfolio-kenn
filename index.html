@@ -21,31 +21,39 @@
   <!-- Navbar -->
   <header id="navbar">
     <div class="nav-container">
-
+      
+      <!-- YOUR LOGO -->
+      <a href="#home" class="logo">&lt;Kenn/&gt;</a>
+      
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </nav>
       
-      <!-- YOUR CONTACT BUTTON -->
-      <a href="mailto:kenn.maga@example.com" class="btn-brutal">Contact Me</a>
+      <!-- Navbar Contact Button -->
+      <a href="#contact" class="btn-brutal">Contact Me</a>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content reveal">
+    <div class="hero-content">
       <h1 class="hero-title">Hi, I’m Kenn Bagaporo Maga</h1>
       <p class="hero-subtitle">
         Aspiring <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
       </p>
       <p class="hero-quote">"Turning curiosity into code."</p>
-      <a href="#projects" class="hero-link">View my work →</a>
+      
+      <!-- Updated Hero Buttons -->
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-brutal">View My Work</a>
+        <a href="#contact" class="btn-brutal btn-outline">Contact Me</a>
+      </div>
     </div>
     
-    <div class="hero-image-wrapper reveal delay-1">
-      <!-- YOUR PROFILE PICTURE HERE -->
+    <div class="hero-image-wrapper">
       <img src="profile.jpg" alt="Kenn Bagaporo Maga" class="hero-profile-img">
     </div>
   </section>
@@ -53,23 +61,23 @@
   <!-- About/Highlights Section -->
   <section class="about bg-white">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <h2>About Me</h2>
         <p>I am a 3rd-year BSIT student at Eastern Samar State University. I'm passionate about creating clean, responsive, and visually appealing websites. I enjoy turning ideas into functional experiences using modern web technologies.</p>
       </div>
 
       <div class="grid-3">
-        <div class="card reveal">
+        <div class="card">
           <i class="fa-solid fa-laptop-code card-icon"></i>
           <h3>Clean Code</h3>
           <p>Writing well-structured, semantic HTML and core programming logic.</p>
         </div>
-        <div class="card reveal delay-1">
+        <div class="card">
           <i class="fa-solid fa-code card-icon"></i>
           <h3>Modern Styling</h3>
           <p>Crafting visually appealing interfaces and responsive design.</p>
         </div>
-        <div class="card reveal delay-2">
+        <div class="card">
           <i class="fa-solid fa-database card-icon"></i>
           <h3>Data Management</h3>
           <p>Building and managing efficient databases using SQL and PHP.</p>
@@ -81,18 +89,18 @@
   <!-- Skills Section -->
   <section id="skills" class="skills bg-rose">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <h2>My Tech Stack</h2>
         <p>I specialize in building responsive web applications and managing databases. I am always eager to expand my technical skill set and apply it to real-world problems.</p>
       </div>
 
       <div class="grid-skills">
-        <div class="skill-card reveal"><i class="fa-brands fa-html5 text-orange"></i><p>HTML</p></div>
-        <div class="skill-card reveal delay-1"><i class="fa-brands fa-css3-alt text-blue"></i><p>CSS</p></div>
-        <div class="skill-card reveal delay-2"><i class="fa-brands fa-js text-yellow"></i><p>JavaScript</p></div>
-        <div class="skill-card reveal"><i class="fa-brands fa-php text-indigo"></i><p>PHP</p></div>
-        <div class="skill-card reveal delay-1"><i class="fa-solid fa-database text-blue-dark"></i><p>MySQL</p></div>
-        <div class="skill-card reveal delay-2"><i class="fa-brands fa-git-alt text-red"></i><p>Git</p></div>
+        <div class="skill-card"><i class="fa-brands fa-html5 text-orange"></i><p>HTML</p></div>
+        <div class="skill-card"><i class="fa-brands fa-css3-alt text-blue"></i><p>CSS</p></div>
+        <div class="skill-card"><i class="fa-brands fa-js text-yellow"></i><p>JavaScript</p></div>
+        <div class="skill-card"><i class="fa-brands fa-php text-indigo"></i><p>PHP</p></div>
+        <div class="skill-card"><i class="fa-solid fa-database text-blue-dark"></i><p>MySQL</p></div>
+        <div class="skill-card"><i class="fa-brands fa-git-alt text-red"></i><p>Git</p></div>
       </div>
     </div>
   </section>
@@ -100,14 +108,14 @@
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <h2>My Projects</h2>
         <p>Here are some of the projects I've worked on, showcasing my skills in creating functional, visually appealing, and user-friendly websites.</p>
       </div>
 
       <div class="grid-2">
         <!-- Project 1 -->
-        <div class="project-card reveal">
+        <div class="project-card">
           <div class="project-image">
             <img src="project1.jpg" alt="Student Information System Preview">
           </div>
@@ -125,7 +133,7 @@
         </div>
         
         <!-- Project 2 (Placeholder) -->
-        <div class="project-card reveal delay-1">
+        <div class="project-card">
           <div class="project-image" style="display: flex; align-items: center; justify-content: center; color: #78716c; font-weight: 700;">
             Project Preview
           </div>
@@ -144,6 +152,22 @@
     </div>
   </section>
 
+  <!-- NEW Contact Section -->
+  <section id="contact" class="contact bg-white">
+    <div class="container text-center">
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>I am currently seeking internship opportunities and academic collaborations. Feel free to reach out if you have any questions or just want to say hi!</p>
+      </div>
+      
+      <div class="contact-btn-wrapper">
+        <a href="mailto:kenn.maga@example.com" class="btn-brutal btn-large">
+          <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i> Email Me
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="container footer-grid">
@@ -157,6 +181,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -223,18 +248,6 @@
       setTimeout(loopDeleting, 1500);
     }
     typingEffect();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach((el) => {
-      observer.observe(el);
-    });
   </script>
 </body>
 </html>
