@@ -225,17 +225,17 @@ header {
 .card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
 .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* --- Experience & Education Section --- */
+/* --- Experience & Education Section (INAYOS PARA TUMAAS ANG STYLE) --- */
 .exp-title-wrapper {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 2px solid var(--border-color); /* Makapal na border sa baba ng title */
   padding-bottom: 1rem;
   margin-bottom: 3rem;
 }
 
 .exp-title-wrapper h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 900;
-  color: #0f172a;
+  color: var(--text-stone); /* Itim na text */
 }
 
 .exp-edu-grid {
@@ -245,46 +245,53 @@ header {
 }
 
 .exp-column h3 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-stone);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
 }
 
 .exp-card {
-  background-color: #f8fafc; /* Light gray-blue background */
-  border: 1px solid #e2e8f0;
+  background-color: var(--bg-white); /* Puti na background */
+  border: 2px solid var(--border-color); /* Makapal na border */
+  box-shadow: 6px 6px 0px var(--shadow-color); /* Hard shadow */
   border-radius: 12px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-5px);
 }
 
 .exp-date {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--text-muted);
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .exp-card h4 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--text-stone);
   margin-bottom: 0.5rem;
 }
 
 .exp-subtitle {
   font-size: 0.95rem;
-  color: #64748b;
+  color: var(--text-muted);
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .exp-card p {
   font-size: 0.95rem;
-  color: #475569;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
